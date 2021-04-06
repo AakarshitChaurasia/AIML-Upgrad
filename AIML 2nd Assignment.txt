@@ -1,0 +1,93 @@
+Question 1
+What is Deep Learning? Read about various activation functions.
+
+Deep learning is a machine learning technique that teaches computers to do what comes naturally to humans: learn by example. Deep learning is a key technology behind driverless cars, 
+enabling them to recognize a stop sign, or to distinguish a pedestrian from a lamppost. It is the key to voice control in consumer devices like phones, tablets, TVs, and hands-free 
+speakers. Deep learning is getting lots of attention lately and for good reason. It’s achieving results that were not possible before.
+
+In deep learning, a computer model learns to perform classification tasks directly from images, text, or sound. Deep learning models can achieve state-of-the-art accuracy, 
+sometimes exceeding human-level performance. Models are trained by using a large set of labeled data and neural network architectures that contain many layers.
+
+Types Of activation---
+
+1. Sigmoid Function
+In an ANN, the sigmoid function is a non-linear AF used primarily in feedforward neural networks. It is a differentiable real function, defined for real input values, and containing positive derivatives everywhere with a specific degree of smoothness. The sigmoid function appears in the output layer of the deep learning models and is used for predicting probability-based outputs. The sigmoid function is represented as:
+
+
+
+Generally, the derivatives of the sigmoid function are applied to learning algorithms. The graph of the sigmoid function is ‘S’ shaped. 
+
+Some of the major drawbacks of the sigmoid function include gradient saturation, slow convergence, sharp damp gradients during backpropagation from within deeper hidden layers to the input layers, and non-zero centered output that causes the gradient updates to propagate in varying directions.
+
+2. Hyperbolic Tangent Function (Tanh)
+The hyperbolic tangent function, a.k.a., the tanh function, is another type of AF. It is a smoother, zero-centered function having a range between -1 to 1. As a result, the output of the tanh function is represented by:
+
+
+The tanh function is much more extensively used than the sigmoid function since it delivers better training performance for multilayer neural networks. The biggest advantage of the tanh function is that it produces a zero-centered output, thereby supporting the backpropagation process. The tanh function has been mostly used in recurrent neural networks for natural language processing and speech recognition tasks.
+
+However, the tanh function, too, has a limitation – just like the sigmoid function, it cannot solve the vanishing gradient problem. Also, the tanh function can only attain a gradient of 1 when the input value is 0 (x is zero). As a result, the function can produce some dead neurons during the computation process.
+
+3. Softmax Function 
+The softmax function is another type of AF used in neural networks to compute probability distribution from a vector of real numbers. This function generates an output that ranges between values 0 and 1 and with the sum of the probabilities being equal to 1. The softmax function is represented as follows:
+
+
+This function is mainly used in multi-class models where it returns probabilities of each class, with the target class having the highest probability. It appears in almost all the output layers of the DL architecture where they are used. The primary difference between the sigmoid and softmax AF is that while the former is used in binary classification, the latter is used for multivariate classification. 
+
+4. Softsign Function
+The softsign function is another AF that is used in neural network computing. Although it is primarily in regression computation problems, nowadays it is also used in DL based text-to-speech applications. It is a quadratic polynomial, represented by:
+
+
+
+Here “x” equals the absolute value of the input. 
+
+ The main difference between the softsign function and the tanh function is that unlike the tanh function that converges exponentially, the softsign function converges in a polynomial form. 
+
+5. Rectified Linear Unit (ReLU) Function 
+One of the most popular AFs in DL models, the rectified linear unit (ReLU) function, is a fast-learning AF that promises to deliver state-of-the-art performance with stellar results. Compared to other AFs like the sigmoid and tanh functions, the ReLU function offers much better performance and generalization in deep learning. The function is a nearly linear function that retains the properties of linear models, which makes them easy to optimize with gradient-descent methods. 
+
+The ReLU function performs a threshold operation on each input element where all values less than zero are set to zero. Thus, the ReLU is represented as:
+
+
+
+
+By rectifying the values of the inputs less than zero and setting them to zero, this function eliminates the vanishing gradient problem observed in the earlier types of activation functions (sigmoid and tanh).
+
+The most significant advantage of using the ReLU function in computation is that it guarantees faster computation – it does not compute exponentials and divisions, thereby boosting the overall computation speed. Another critical aspect of the ReLU function is that it introduces sparsity in the hidden units by squishing the values between zero to maximum.
+
+6. Exponential Linear Units (ELUs) Function
+The exponential linear units (ELUs) function is an AF that is also used to speed up the training of neural networks (just like ReLU function). The biggest advantage of the ELU function is that it can eliminate the vanishing gradient problem by using identity for positive values and by improving the learning characteristics of the model.
+
+ELUs have negative values that push the mean unit activation closer to zero, thereby reducing computational complexity and improving the learning speed. The ELU is an excellent alternative to the ReLU – it decreases bias shifts by pushing mean activation towards zero during the training process. 
+
+The exponential linear unit function is represented as:
+
+
+
+
+The derivative or gradient of the ELU equation is presented as:
+
+
+
+Here “α” equals the ELU hyperparameter that controls the saturation point for negative net inputs, which is usually set to 1.0. However, the ELU function has a limitation – it is not zero-centered.
+
+
+
+
+
+Question 2
+Difference between supervised and unsupervised with your own set of examples.
+
+
+
+Supervised learning overview
+The central question of supervised learning is how do we best devise a system that will teach an algorithm to recognize useful patterns in the data given the labeled examples of the training set? Most algorithms use something called a cost or loss function in order to obtain a quantitative measurement of how well the algorithm is performing on the labeled data. The loss function takes in two arguments, the correct label of a training example and the label predicted by the machine learning algorithm and computes a loss value corresponding to how well the algorithm performed on the prediction task. 
+
+In many ways, this is similar to how we as humans learn. As children, we stumble about in our environments and make mistakes. For example, a toddler who has only ever seen dogs and has never seen a cat, may point at a cat and say “doggy!” In these instances where mistakes occur, parents or teachers intervene and gently correct the child, who learns how to label a cat when he or she sees one in the future. 
+
+In the same way, knowing the loss value allows the machine learning algorithm to recompute its parameters so that it can generate better predictions, and produce lower loss values, on the next pass over the training data. This process is repeated until the algorithm finally settles on a minimum loss value past which it can no longer improve.
+
+In a nutshell, that is how supervised learning works. Of course, there are hundreds of different supervised learning algorithms that exist and each exhibits its own particularities, but in most cases the general process remains the same. The domain of supervised learning is huge and includes algorithms such as k nearest neighbors, convolutional neural networks for object detection, random forests, support vector machines, linear and logistic regression, and many, many more.
+
+Unsupervised learning
+Unsupervised learning is the opposite of supervised learning. In unsupervised learning, the algorithm tries to learn some inherent structure to the data with only unlabeled examples. Two common unsupervised learning tasks are clustering and dimensionality reduction. In clustering, we attempt to group data points into meaningful clusters such that elements within a given cluster are similar to each other but dissimilar to those from other clusters. Clustering is useful for tasks such as market segmentation. For example, suppose a business has data about customers, such as demographic information and their purchasing behavior. They might want to identify subsegments of the market where a particular product sells extremely well and others where it performs poorly. In this case, they could use an unsupervised clustering algorithm such as k-means or hierarchical clustering to identify those strong and weak customer bases.
+
